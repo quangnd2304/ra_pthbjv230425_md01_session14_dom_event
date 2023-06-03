@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7</title>
+</head>
+
+<body>
+    <script>
+        // Viết function kiểm tra số chẵn/lẻ, nguyên tố, hoàn hảo
+        // return [true|false,true|false,true|false]
+        function checkNumber(number) {
+            let arrResult = [];
+            // B1. Kiểm tra là số chẵn lẻ
+            if (number % 2 == 0) {
+                arrResult.push(true);
+            } else {
+                arrResult.push(false);
+            }
+            // B2. Kiểm tra số nguyên tố
+            // checkNT = true: số nguyên tố, checkNT = false: không phải số nguyên tố
+            let checkNT = true;
+            if (number >= 2) {
+                for (let index = 2; index <= Math.sqrt(number); index++) {
+                    if (number % index == 0) {
+                        // number có ước là index khác 1 và chính nó ->ko phải nguyên tố
+                        checkNT = false;
+                        break;
+                    }
+                }
+            } else {
+                checkNT = false;
+            }
+            arrResult.push(checkNT);
+            // B3. Kiểm tra số hoàn hảo
+            let checkHH = false;
+            let total = 0;
+            for (let index = 1; index < number; index++) {
+                if (number % index == 0) {
+                    total += index;
+                }
+            }
+            if (total == number) {
+                checkHH = true;
+            }
+            arrResult.push(checkHH);
+            return arrResult;
+        }
+        let result = checkNumber(6);
+        console.log("Kết quả:", result);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện bàn phím</title>
+</head>
+
+<body>
+    <button id="ra">Rikkei Academy</button>
+    <script>
+        let ra = document.getElementById("ra");
+        ra.addEventListener("keydown", function () {
+            console.log("Bạn vừa ấn vào 1 phím");
+        })
+        ra.addEventListener("keyup", function () {
+            console.log("Bạn vừa bỏ phím ra");
+        })
+
+    </script>
+</body>
+
+</html>

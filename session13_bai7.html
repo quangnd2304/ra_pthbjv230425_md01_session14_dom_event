@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 7</title>
+</head>
+
+<body>
+    <script>
+        // Hàm kiểm tra chẵn lẻ
+        function checkEvenNumber(number) {
+            if (number % 2 == 0) {
+                return true;
+            }
+            return false;
+        }
+        // Hàm kiểm tra số nguyên tố
+        function checkPrimeNumber(number) {
+            if (number >= 2) {
+                for (let i = 2; i <= Math.sqrt(number); i++) {
+                    if (number % i == 0) {
+                        return false;
+                    }
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }
+        // Hàm kiểm tra số hoàn hảo
+        function checkPerfectNumber(number) {
+            let total = 0;
+            for (let index = 1; index < number; index++) {
+                if (number % index == 0) {
+                    total += index;
+                }
+            }
+            if (total == number) {
+                return true;
+            }
+            return false;
+        }
+        // Nhập 1 số từ bàn phím và kiểm tra số đó là số chẵn/lẻ, nguyên tố, hoàn hảo
+        let number = Number(prompt("Nhập vào một số"));
+        if (checkEvenNumber(number)) {
+            console.log("Số vừa nhập là số chẵn");
+        } else {
+            console.log("Số vừa nhập là số lẻ");
+        }
+        if (checkPrimeNumber(number)) {
+            console.log("Số vừa nhập là số nguyên tố");
+        } else {
+            console.log("Số vừa nhập không phải là số nguyên tố");
+        }
+        if (checkPerfectNumber(number)) {
+            console.log("Số vừa nhập là số hoàn hảo");
+        } else {
+            console.log("Số vừa nhập không phải là số hoàn hảo");
+        }
+    </script>
+</body>
+
+</html>

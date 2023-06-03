@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="rikkei" style="color: red;">Rikkei Academy - DOM & Event</h2>
+    <p class="ra"><b>Học viện đào tạo CNTT chất lượng Nhật Bản</b></p>
+    <h3 class="ra">Registration</h3>
+    <form action="#" id="registration">
+        <input type="text" name="studentId" id="studentId" value="SV001" placeholder="Input studentId" /><br />
+        <input type="text" name="studentName" id="studentName" placeholder="Input student name" />
+    </form>
+    <script>
+        // Truy cập vào phần tử có id = studentId
+        let studentId = document.getElementById("studentId");
+        // let valueOfStudentId = document.getElementById("studentId").value;
+        let valueOfStudentId = studentId.value;
+        console.log(studentId);
+        console.log("Giá trị nhập trên input có id là studentId--->", valueOfStudentId);
+        // Lấy tất cả các phần tử là input
+        let inputElements = document.getElementsByTagName("input");
+        console.log(inputElements);
+        // Lấy tất cả các phần tử có class là ra
+        let raElements = document.getElementsByClassName("ra");
+        console.log(raElements);
+        // Lây phần tử input đầu tiên trong form
+        let studentIdInput = document.querySelector("#registration input");
+        console.log(studentIdInput);
+        // Lấy tất cả các phần tử input trong form
+        let elementInputs = document.querySelectorAll("#registration input");
+        console.log(elementInputs);
+        // Thay đổi nội dung thẻ h2 với nội dung mới là: Rikkei Academy - Session 14: DOM and Event
+        // B1: truy cập đến phần tử h2
+        let title = document.querySelector("h2");
+        // B2: Thay đổi nội dung thẻ h2
+        title.innerText = "Rikkei Academy - Session 14: DOM and Event";
+        // B3: lấy thông tin text của thẻ h2
+        let h2Text = title.innerText;
+        console.log("text của thẻ h2--->", h2Text);
+        // In thông tin của thẻ p có class là ra
+        let pRa = document.querySelector("p.ra");
+        // In thông tin thẻ p theo innerHTML
+        console.log("Theo innerHTML--->", pRa.innerHTML);
+        console.log("Theo innerText--->", pRa.innerText);
+        console.log("Theo textContent--->", pRa.textContent);
+        // Lấy ra giá trị thuộc tính style của thẻ h2
+        let valueH2Style = document.getElementById("rikkei").style;
+        console.log("Attribute của h2---->", valueH2Style);
+        // Đổi màu chữ h2 thành blue
+        let h2 = document.getElementById("rikkei");
+        h2.style["color"] = "blue";
+        h2.style.color = "orange";
+        h2.style.background = "green";
+        // Đổi màu chữ h2 thành màu đỏ
+        h2.setAttribute("style", "color:red");
+
+
+
+    </script>
+</body>
+
+</html>

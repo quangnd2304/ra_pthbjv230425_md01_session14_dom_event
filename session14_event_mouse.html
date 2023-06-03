@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện chuột</title>
+</head>
+
+<body>
+    <button id="zone01" onmousedown="btnMouseDown()">MouseDown-Up</button>
+    <script>
+        function btnMouseDown() {
+            console.log("Bạn vừa ấn chuột xuống");
+        }
+        let btn = document.getElementById("zone01");
+        btn.addEventListener("mouseup", function btnMouseUp() {
+            console.log("Bạn vừa thả chuột ra");
+        })
+        btn.addEventListener("mouseover", function () {
+            console.log("Bạn vừa di chuyển chuột đi qua khỏi button");
+        })
+        btn.onmouseout = function () {
+            console.log("Bạn vừa di chuyển chuột ra khỏi button");
+        }
+        btn.addEventListener("click", function () {
+            console.log("Bạn vừa click vào button");
+        })
+
+    </script>
+</body>
+
+</html>

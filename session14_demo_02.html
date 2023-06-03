@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 02</title>
+</head>
+
+<body>
+    <div class="content"></div>
+    <script>
+        // Thêm một phần tử tiêu đề h2 có nội dung Rikkei Academy
+        // B1. truy xuất đến div có class = content
+        let div = document.getElementsByClassName("content");//Collection
+        // B2. Tạo ra phân tử h2 có nội dung là Rikkei Academy
+        let h2 = document.createElement("h2");
+        h2.innerText = "Rikkei Academy";
+        // B3. thêm phần tử h2 vào trong div
+        div[0].appendChild(h2);
+        /*
+            1. thay đổi màu chữ, kích cỡ chữ, background cho thẻ h2
+            2. Thêm một đoạn văn có nội dung: Thầy Quang đẹp zai quá
+            3. Thêm một tiêu đề h3 với nội dung là Bài học hay quá
+            4. Xóa đoạn văn Thầy Quang đẹp zai quá
+        */
+        h2.style.color = "red";
+        h2.style.background = "black";
+        h2.style.fontSize = "20px";
+        // Tạo một đoạn văn
+        let p = document.createElement("p");
+        p.innerHTML = "Thầy Quang đẹp zai quá";
+        div[0].appendChild(p);
+        //Tạo tiêu đề h3
+        let h3 = document.createElement("h3");
+        h3.innerText = "Bài học hay quá";
+        div[0].appendChild(h3);
+        // Xóa đoạn văn
+        div[0].removeChild(p);
+        // Thay thẻ h3 bằng đoạn văn có nội dung "Học viện đào tạo CNTT chất lượng nhật bản"
+        let pNew = document.createElement("p");
+        pNew.innerText = "Học viện đào tạo CNTT chất lượng Nhật Bản";
+        div[0].replaceChild(pNew, h3);
+        console.log("URL--->", document.URL);
+        console.log("Title--->", document.title);
+        console.log("head--->", document.head)
+    </script>
+</body>
+
+</html>
